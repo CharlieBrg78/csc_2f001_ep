@@ -6,4 +6,10 @@ struct monster {
     int hp;
 };
 
+struct monster* create_monster(char* name,int hp);
+
+void display_monster(struct monster*);
+
+void delete_monster(struct monster*);
+
 #endif
