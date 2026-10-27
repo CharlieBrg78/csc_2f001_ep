@@ -5,7 +5,7 @@
 
 struct monster* create_monster(char* name,int hp) {
     struct monster* m = malloc(sizeof(*m));
-    m -> name = name;
+    snprintf(m->name, 256, "%s", name);
     m -> hp = hp;
     return m;
 }
