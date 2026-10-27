@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "army.h"
 
 struct army {
@@ -24,9 +25,7 @@ void add_monster_to_army(struct army* a, struct monster* m) {
             new_capacity = 2 * a->capacity;
         }
         struct monster** new_monsters = malloc(new_capacity * sizeof(struct monster*));
-        for (int i = 0; i < a->top; i++) {
-            new_monsters[i] = a->monsters[i];
-        }
+        memcpy(new_monsters, a->monsters, sizeof(*new_monsters) * a->top);
         free(a->monsters);
         a->monsters = new_monsters;
         a->capacity = new_capacity;
