@@ -5,11 +5,11 @@
 LDFLAGS=
 LIBS=
 CFLAGS=-Wall -Werror -g
-BIN=army-pokemon
+BIN=army-pokemon army-zombie
 
 all: $(BIN)
 
-army-pokemon: main.o monster.o army-pokemon.o
+army-%: main.o monster.o army-%.o
 	gcc $(LDFLAGS) -o $@ $^ $(LIBS)
 
 %.o: %.c monster.h macro.h army.h
