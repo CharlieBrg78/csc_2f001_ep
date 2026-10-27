@@ -2,11 +2,7 @@
 #define _ARMY_H_
 #include "monster.h"
 
-struct army {
-  struct monster** monsters; // a pointer to an array, where each element of the array is a pointer to a monster
-  int top;                   // where you have the last monster in the array
-  int capacity;              // the capacity of the array
-};
+struct army; // declare that a data structure named army exists
 
 struct army* create_army();
 
