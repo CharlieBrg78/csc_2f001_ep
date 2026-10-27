@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include "monster.h"
-
+#include "macro.h"
 
 
 int main() {
     struct monster* monsters[10];
-    char buf[256];
+    char buf[NAME_SIZE];
     for (int i = 0; i < 10; i++) {
-        snprintf(buf, 256, "Pikachu-%d", i);
+        snprintf(buf, NAME_SIZE, "Pikachu-%d", i);
         struct monster* m = create_monster(buf, 25);
         monsters[i] = m;
     }

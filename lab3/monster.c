@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "monster.h"
+#include "macro.h"
 
 
 struct monster* create_monster(char* name,int hp) {
     struct monster* m = malloc(sizeof(*m));
-    snprintf(m->name, 256, "%s", name);
+    snprintf(m->name, NAME_SIZE, "%s", name);
     m -> hp = hp;
     return m;
 }
